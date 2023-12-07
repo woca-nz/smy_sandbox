@@ -12,7 +12,7 @@ WITH Referral AS (
         r.mag_exitdate,
         r.mag_individualid,
         p.mag_planid,
-        p.mag_signoffdate AS signoffdate,
+        p.mag_signoffdate AS signoffdate, -- helloworld
         r.x_extract_org_slug
     FROM 
         mag_referral r
@@ -34,6 +34,8 @@ WITH Referral AS (
         AND r.mag_familygroup IS NOT NULL
         AND cs.service_id IS NOT NULL
 )
+
+
 
 SELECT 
     COUNT(DISTINCT mag_familygroupnumber) AS 'Total Referrals',
